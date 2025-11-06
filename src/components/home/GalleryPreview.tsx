@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
+import { Link } from "react-router-dom";
 const GalleryPreview = () => {
   const galleryImages = [
     {
@@ -68,10 +68,10 @@ const GalleryPreview = () => {
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-body font-semibold group"
           >
-            <a href="/gallery">
+            <Link to="/gallery">
               View Full Gallery
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </Button>
         </div>
       </div>
