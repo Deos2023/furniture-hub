@@ -1,6 +1,6 @@
 import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
+// import sofa from "@/assets/12.jpeg"
 const About = () => {
   const features = [
     "Premium Quality Materials",
@@ -47,7 +47,7 @@ const About = () => {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80" 
+                src = "../../assets/12.jpeg"
                 alt="Furniture Craftsmanship" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
