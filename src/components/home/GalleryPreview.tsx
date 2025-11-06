@@ -1,30 +1,37 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import sofa from "@/assets/2.jpeg"
+import sofa2 from "@/assets/6.jpeg"
+import bed from "@/assets/26.jpeg"
+import bed2 from "@/assets/36.jpeg"
+import bed3 from "@/assets/29.jpeg"
+import bed4 from "@/assets/13.jpeg"
+
 const GalleryPreview = () => {
   const galleryImages = [
     {
-      url: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80",
+      src: sofa,
       title: "Luxury Sofa Set"
     },
     {
-      url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80",
+      src: sofa2,
       title: "Modern Design"
     },
     {
-      url: "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=800&q=80",
+      src: bed,
       title: "Elegant Comfort"
     },
     {
-      url: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+      src: bed2,
       title: "Custom Design"
     },
     {
-      url: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80",
+      src: bed3,
       title: "Premium Quality"
     },
     {
-      url: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=800&q=80",
+      src: bed4,
       title: "Timeless Style"
     }
   ];
@@ -49,7 +56,7 @@ const GalleryPreview = () => {
               className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg hover-lift cursor-pointer"
             >
               <img 
-                src={image.url} 
+                src={image.src} 
                 alt={image.title}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
