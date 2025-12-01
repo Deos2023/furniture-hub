@@ -92,7 +92,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="border-t border-primary-foreground/20 mt-8 pt-6 text-center">
           <p className="font-body text-sm opacity-90">
-            © {new Date().getFullYear()} Furniture Hub. All rights reserved. | Designed with excellence.
+            © {new Date().getFullYear()} Furniture Hub. All rights reserved. | Designed with excellence by <span className="font-bold text-accent">Digital Exposure Online Services</span>.
           </p>
         </div>
       </div>
