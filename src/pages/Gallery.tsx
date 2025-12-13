@@ -44,6 +44,10 @@ import img37 from "@/assets/37.jpeg";
 import img38 from "@/assets/38.jpeg";
 import img39 from "@/assets/39.jpeg";
 import img40 from "@/assets/40.jpeg";
+import img41 from "@/assets/41.jpeg";
+import img42 from "@/assets/42.jpeg";
+import img43 from "@/assets/43.jpeg";
+import img44 from "@/assets/44.jpeg";
 
 // Import hero image
 // import heroImage from "@/assets/hero-sofa.jpg";
@@ -80,17 +84,70 @@ const Gallery = () => {
 
   // Array of all numeric images
   const numericImages = [
-    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
-    img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
-    img21, img22, img23, img24, img25, img26, img27, img28, img29, img30,
-    img31, img32, img33, img34, img35, img36, img37, img38, img39, img40
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7,
+    img8,
+    img9,
+    img10,
+    img11,
+    img12,
+    img13,
+    img14,
+    img15,
+    img16,
+    img17,
+    img18,
+    img19,
+    img20,
+    img21,
+    img22,
+    img23,
+    img24,
+    img25,
+    img26,
+    img27,
+    img28,
+    img29,
+    img30,
+    img31,
+    img32,
+    img33,
+    img34,
+    img35,
+    img36,
+    img37,
+    img38,
+    img39,
+    img40,
+    img41,
+    img43,
+    img42,
+    img44,
   ];
 
   // Array of all WhatsApp images
   const whatsappImages = [
-    whatsapp00, whatsapp01, whatsapp02, whatsapp03_1, whatsapp03,
-    whatsapp04, whatsapp05, whatsapp06, whatsapp07, whatsapp08,
-    whatsapp09, whatsapp10, whatsapp11, whatsapp12, whatsapp14_1, whatsapp14
+    whatsapp00,
+    whatsapp01,
+    whatsapp02,
+    whatsapp03_1,
+    whatsapp03,
+    whatsapp04,
+    whatsapp05,
+    whatsapp06,
+    whatsapp07,
+    whatsapp08,
+    whatsapp09,
+    whatsapp10,
+    whatsapp11,
+    whatsapp12,
+    whatsapp14_1,
+    whatsapp14,
   ];
 
   // Array of all videos
@@ -103,18 +160,27 @@ const Gallery = () => {
     ...numericImages.map((src, index) => ({
       src,
       title: `Premium Sofa Collection ${index + 1}`,
-      category: index % 4 === 0 ? "Living Room" : 
-               index % 4 === 1 ? "Contemporary" : 
-               index % 4 === 2 ? "Sectionals" : "Custom Design",
-      type: "image" as const
+      category:
+        index % 4 === 0
+          ? "Living Room"
+          : index % 4 === 1
+          ? "Contemporary"
+          : index % 4 === 2
+          ? "Sectionals"
+          : "Custom Design",
+      type: "image" as const,
     })),
     // WhatsApp images
     ...whatsappImages.map((src, index) => ({
       src,
       title: `Showcase ${index + 41}`,
-      category: index % 3 === 0 ? "Modern Design" : 
-               index % 3 === 1 ? "Premium Quality" : "Handcrafted",
-      type: "image" as const
+      category:
+        index % 3 === 0
+          ? "Modern Design"
+          : index % 3 === 1
+          ? "Premium Quality"
+          : "Handcrafted",
+      type: "image" as const,
     })),
     // Videos
     ...videos.map((src, index) => ({
@@ -122,11 +188,15 @@ const Gallery = () => {
       title: `Product Showcase Video ${index + 1}`,
       category: "Video Tour",
       type: "video" as const,
-      thumbnail: numericImages[index + 35] // Using last few images as thumbnails
-    }))
+      thumbnail: numericImages[index + 35], // Using last few images as thumbnails
+    })),
   ];
 
-  const handleMediaClick = (src: string, type: "image" | "video", thumbnail?: string) => {
+  const handleMediaClick = (
+    src: string,
+    type: "image" | "video",
+    thumbnail?: string
+  ) => {
     setSelectedMedia(src);
     setMediaType(type);
   };
@@ -137,17 +207,30 @@ const Gallery = () => {
   };
 
   // Filter categories for the tabs
-  const categories = ["All", "Living Room", "Contemporary", "Sectionals", "Custom Design", "Modern Design", "Premium Quality", "Handcrafted", "Video Tour", "Featured", "Brand"];
+  const categories = [
+    "All",
+    "Living Room",
+    "Contemporary",
+    "Sectionals",
+    "Custom Design",
+    "Modern Design",
+    "Premium Quality",
+    "Handcrafted",
+    "Video Tour",
+    "Featured",
+    "Brand",
+  ];
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const filteredMedia = activeCategory === "All" 
-    ? allMedia 
-    : allMedia.filter(item => item.category === activeCategory);
+  const filteredMedia =
+    activeCategory === "All"
+      ? allMedia
+      : allMedia.filter((item) => item.category === activeCategory);
 
   return (
     <div className="min-h-screen">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-12 bg-gradient-to-br from-primary via-primary/90 to-secondary text-primary-foreground">
         <div className="container mx-auto px-4">
@@ -156,17 +239,18 @@ const Gallery = () => {
               Our <span className="text-accent">Gallery</span>
             </h1>
             <p className="font-body text-xl text-primary-foreground/90 leading-relaxed mb-8">
-              Explore our complete collection of {allMedia.length} handcrafted sofas and furniture pieces
+              Explore our complete collection of {allMedia.length} handcrafted
+              sofas and furniture pieces
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
                 <span className="font-body text-lg font-semibold">
-                  {allMedia.filter(m => m.type === "image").length} Photos
+                  {allMedia.filter((m) => m.type === "image").length} Photos
                 </span>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
                 <span className="font-body text-lg font-semibold">
-                  {allMedia.filter(m => m.type === "video").length} Videos
+                  {allMedia.filter((m) => m.type === "video").length} Videos
                 </span>
               </div>
             </div>
@@ -190,7 +274,11 @@ const Gallery = () => {
               >
                 {category}
                 <span className="ml-1 opacity-75">
-                  ({category === "All" ? allMedia.length : allMedia.filter(m => m.category === category).length})
+                  (
+                  {category === "All"
+                    ? allMedia.length
+                    : allMedia.filter((m) => m.category === category).length}
+                  )
                 </span>
               </button>
             ))}
@@ -203,23 +291,29 @@ const Gallery = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {filteredMedia.map((item, index) => (
-              <div 
+              <div
                 key={index}
-                onClick={() => handleMediaClick(item.src, item.type, 'thumbnail' in item ? item.thumbnail : undefined)}
+                onClick={() =>
+                  handleMediaClick(
+                    item.src,
+                    item.type,
+                    "thumbnail" in item ? item.thumbnail : undefined
+                  )
+                }
                 className="group relative aspect-square rounded-2xl overflow-hidden shadow-lg hover-lift cursor-pointer"
               >
                 {item.type === "image" ? (
-                  <img 
-                    src={item.src} 
+                  <img
+                    src={item.src}
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                   />
                 ) : (
                   <div className="relative w-full h-full">
-                    {'thumbnail' in item && item.thumbnail ? (
-                      <img 
-                        src={item.thumbnail} 
+                    {"thumbnail" in item && item.thumbnail ? (
+                      <img
+                        src={item.thumbnail}
                         alt={item.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         loading="lazy"
@@ -236,7 +330,7 @@ const Gallery = () => {
                     </div>
                   </div>
                 )}
-                
+
                 {/* Overlay with info */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                   <div className="flex items-center gap-2 mb-2">
@@ -253,7 +347,9 @@ const Gallery = () => {
                     {item.title}
                   </p>
                   <p className="font-body text-xs text-primary-foreground/80 mt-1">
-                    {item.type === "video" ? "Click to play video" : "Click to enlarge"}
+                    {item.type === "video"
+                      ? "Click to play video"
+                      : "Click to enlarge"}
                   </p>
                 </div>
               </div>
@@ -264,7 +360,7 @@ const Gallery = () => {
 
       {/* Lightbox Modal */}
       {selectedMedia && mediaType && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 animate-in fade-in duration-300"
           onClick={handleClose}
         >
@@ -275,18 +371,18 @@ const Gallery = () => {
           >
             <X className="w-6 h-6 text-white" />
           </button>
-          
+
           <div className="max-w-7xl max-h-[90vh] w-full flex items-center justify-center">
             {mediaType === "image" ? (
-              <img 
-                src={selectedMedia} 
-                alt="Gallery" 
+              <img
+                src={selectedMedia}
+                alt="Gallery"
                 className="max-w-full max-h-full object-contain rounded-lg"
                 onClick={(e) => e.stopPropagation()}
               />
             ) : (
-              <video 
-                src={selectedMedia} 
+              <video
+                src={selectedMedia}
                 controls
                 autoPlay
                 className="max-w-full max-h-full object-contain rounded-lg"
